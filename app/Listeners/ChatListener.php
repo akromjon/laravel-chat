@@ -2,11 +2,11 @@
 
 namespace App\Listeners;
 
-use App\Events\MessageEvent;
+use App\Events\ChatEvent;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
-class MessageListener
+class ChatListener
 {
     /**
      * Create the event listener.
@@ -24,9 +24,8 @@ class MessageListener
      * @param  MessageEvent  $event
      * @return void
      */
-    public function handle(MessageEvent $event)
+    public function handle(ChatEvent $event)
     {
-
         $get_message = $event->getMessage();
     }
 }

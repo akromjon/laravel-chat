@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\MessageController;
+use App\Http\Controllers\ChatController;
+use App\Http\Controllers\RoomController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::apiResource('/messages', MessageController::class)->only([
+Route::apiResource('/chats', ChatController::class)->only([
     'index', 'store'
+]);
+Route::apiResource('/rooms', RoomController::class)->only([
+    'index', 'show'
 ]);

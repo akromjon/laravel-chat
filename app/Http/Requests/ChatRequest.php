@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class MessageRequest extends FormRequest
+class ChatRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,7 +25,8 @@ class MessageRequest extends FormRequest
     {
         return [
             'user_id'=>'required',
-            'message'=>'required|max:255'
+            'message'=>'required|max:255',
+            'room_id'=>'required|exists:rooms,id'
         ];
     }
 }
